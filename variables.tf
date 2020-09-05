@@ -2,10 +2,6 @@ variable "access_key" {}
 
 variable "secret_key" {}
 
-variable "first_account_id" {
-  type  = "string"
-}
-
 variable "region" {
   type  = "string"
 }
