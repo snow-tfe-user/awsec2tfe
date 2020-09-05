@@ -3,5 +3,5 @@ provider "aws" {
   secret_key          = "${var.secret_key}"
   allowed_account_ids = ["${var.first_account_id}"]
   region              = "${var.region}"
-  version             = ">= 2.0"
+  version             = ">= 1.0"
 }
