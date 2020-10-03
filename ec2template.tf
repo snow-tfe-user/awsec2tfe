@@ -14,6 +14,7 @@ resource "aws_network_interface" "nicByTFE" {
 resource "aws_instance" "ec2ByTFE" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
+  associate_public_ip_address = true
   
   network_interface {
     network_interface_id = "${aws_network_interface.nicByTFE.id}"
