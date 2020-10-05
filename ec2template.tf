@@ -5,6 +5,7 @@ resource "aws_vpc" "vpcByTFE" {
 resource "aws_subnet" "subnetByTFE" {
   vpc_id      = "${aws_vpc.vpcByTFE.id}"
   cidr_block  = "10.0.1.0/24"
+  map_public_ip_on_launch = true
 }
 
 resource "aws_network_interface" "nicByTFE" {
@@ -14,7 +15,6 @@ resource "aws_network_interface" "nicByTFE" {
 resource "aws_instance" "ec2ByTFE" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
-  associate_public_ip_address = true
   
   network_interface {
     network_interface_id = "${aws_network_interface.nicByTFE.id}"
